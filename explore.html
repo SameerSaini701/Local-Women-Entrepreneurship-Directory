@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Businesses | SheRise</title>
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/explore.css"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+  
+ <!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">SheRise</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html" class="active">Explore Businesses</a></li>
+            <li><a href="add-business.html">Add Business</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html" >About Us</a></li>
+        </ul>
+
+    </nav>
+</header>
+   
+
+
+    <!-- Explore Hero Section -->
+    <section class="directory-hero">
+
+        <p class="tagline">DISCOVER • CONNECT • SUPPORT</p>
+
+        <h1>Explore Women-Led Businesses</h1>
+
+        <p>
+            Discover inspiring local businesses, support their work
+            and help their dreams grow.
+        </p>
+
+    </section>
+
+
+    <!-- Business Directory Section -->
+    <section class="directory-section">
+
+        <div class="directory-heading">
+
+            <div>
+                <h2>Find Your Next Favourite Business</h2>
+
+                <p>
+                    Search the directory or use filters to find what you need.
+                </p>
+            </div>
+
+            <span class="result-count" id="resultCount">
+                5 businesses
+            </span>
+
+        </div>
+
+
+        <!-- Search and Filters -->
+        <div class="filter-panel">
+
+            <!-- Search Bar -->
+            <label class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search business or owner name..."
+                    aria-label="Search businesses"
+                >
+
+            </label>
+
+
+            <!-- State Filter -->
+            <select id="stateFilter">
+
+                <option value="">All States</option>
+
+                <option value="Punjab">Punjab</option>
+
+                <option value="Haryana">Haryana</option>
+
+            </select>
+
+
+            <!-- City Filter -->
+            <select id="cityFilter">
+
+                <option value="">All Cities</option>
+
+            </select>
+
+
+            <!-- Category Filter -->
+            <select id="categoryFilter">
+
+                <option value="">All Categories</option>
+
+                <option value="Fashion">Fashion</option>
+
+                <option value="Food">Food</option>
+
+                <option value="Beauty">Beauty</option>
+
+                <option value="Handicrafts">Handicrafts</option>
+
+                <option value="Education">Education</option>
+
+            </select>
+
+
+            <!-- Reset Button -->
+            <button class="reset-btn" id="resetBtn" type="button">
+
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <!-- Business Cards -->
+        <div class="business-grid" id="businessGrid">
+
+            <!-- Cards will be generated using JavaScript -->
+
+        </div>
+
+
+        <!-- No Results Message -->
+        <div class="empty-state" id="emptyState" hidden>
+
+            <i class="fa-regular fa-face-frown"></i>
+
+            <h3>No Businesses Found</h3>
+
+            <p>Try changing your search or filters.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>SheRise</h2>
+
+        <p>Empowering Women. Celebrating Entrepreneurship.</p>
+
+        <p>&copy; 2026 SheRise. All rights reserved.</p>
+
+    </footer>
+
+
+    
+
+<script>
+
+// 1. Get HTML Elements
+
+const businessGrid = document.getElementById("businessGrid");
+const searchInput = document.getElementById("searchInput");
+const stateFilter = document.getElementById("stateFilter");
+const cityFilter = document.getElementById("cityFilter");
+const categoryFilter = document.getElementById("categoryFilter");
+const resetBtn = document.getElementById("resetBtn");
+const resultCount = document.getElementById("resultCount");
+const emptyState = document.getElementById("emptyState");
+
+
+// 2. Business Data
+
+const businesses = [
+    {
+        name: "Heritage Threads Studio",
+        owner: "Aanya Sharma",
+        category: "Fashion",
+        city: "Jalandhar",
+        state: "Punjab",
+        description: "A boutique showcasing traditional designs with a modern touch.",
+        icon: "fa-shirt"
+    },
+    {
+        name: "The Sweet Oven",
+        owner: "Mehak Verma",
+        category: "Food",
+        city: "Ludhiana",
+        state: "Punjab",
+        description: "A home bakery offering cakes and delicious treats.",
+        icon: "fa-cake-candles"
+    },
+    {
+        name: "Glow And Grace Studio",
+        owner: "Simran Kaur",
+        category: "Beauty",
+        city: "Ambala",
+        state: "Haryana",
+        description: "A beauty studio offering personal care services.",
+        icon: "fa-spa"
+    },
+    {
+        name: "Mitti Art House",
+        owner: "Ritu",
+        category: "Handicrafts",
+        city: "Kurukshetra",
+        state: "Haryana",
+        description: "A creative business featuring handmade crafts.",
+        icon: "fa-palette"
+    },
+    {
+        name: "BrightPath Learning",
+        owner: "Kavita",
+        category: "Education",
+        city: "Hisar",
+        state: "Haryana",
+        description: "An educational centre offering learning support.",
+        icon: "fa-book-open"
+    }
+];
+
+
+// 3. Display Business Cards
+
+function displayBusinesses(data) {
+
+    businessGrid.innerHTML = "";
+
+    data.forEach(function(business) {
+
+        businessGrid.innerHTML += `
+            <div class="business-card">
+
+                <div class="business-image">
+                    <i class="fa-solid ${business.icon}"></i>
+                </div>
+
+                <div class="business-info">
+
+                    <div class="card-topline">
+                        <span class="category-tag">
+                            ${business.category}
+                        </span>
+                        <span class="demo-tag">DEMO ENTRY</span>
+                    </div>
+
+                    <h3>${business.name}</h3>
+
+                    <p class="owner">
+                        Owner: ${business.owner}
+                    </p>
+
+                    <p class="description">
+                        ${business.description}
+                    </p>
+
+                    <div class="business-meta">
+                        <i class="fa-solid fa-location-dot"></i>
+                        ${business.city}, ${business.state}
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    resultCount.textContent = data.length + " businesses";
+
+    emptyState.hidden = data.length !== 0;
+
+}
+
+
+// 4. Search and Filter Function
+
+function searchBusinesses() {
+
+    let search = searchInput.value.toLowerCase();
+
+    let state = stateFilter.value;
+
+    let city = cityFilter.value;
+
+    let category = categoryFilter.value;
+
+    let filtered = businesses.filter(function(business) {
+
+        return (
+
+            (business.name.toLowerCase().includes(search) ||
+             business.owner.toLowerCase().includes(search)) &&
+
+            (state === "" || business.state === state) &&
+
+            (city === "" || business.city === city) &&
+
+            (category === "" || business.category === category)
+
+        );
+
+    });
+
+    displayBusinesses(filtered);
+
+}
+
+
+// 5. Search Event
+
+searchInput.addEventListener("input", searchBusinesses);
+
+
+// 6. Filter Events
+
+stateFilter.addEventListener("change", function() {
+
+    let state = stateFilter.value;
+
+    cityFilter.innerHTML = '<option value="">All Cities</option>';
+
+    let cities = [];
+
+    businesses.forEach(function(business) {
+
+        if ((state === "" || business.state === state) &&
+            !cities.includes(business.city)) {
+
+            cities.push(business.city);
+
+        }
+
+    });
+
+    cities.forEach(function(city) {
+
+        cityFilter.innerHTML += `
+            <option value="${city}">${city}</option>
+        `;
+
+    });
+
+    searchBusinesses();
+
+});
+
+cityFilter.addEventListener("change", searchBusinesses);
+
+categoryFilter.addEventListener("change", searchBusinesses);
+
+
+// 7. Reset Button
+
+resetBtn.addEventListener("click", function() {
+
+    searchInput.value = "";
+
+    stateFilter.value = "";
+
+    cityFilter.innerHTML = '<option value="">All Cities</option>';
+
+    categoryFilter.value = "";
+
+    searchBusinesses();
+
+});
+
+
+// 8. Initial Display
+
+displayBusinesses(businesses);
+
+</script>
+
+
+</body>
+</html>

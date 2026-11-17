@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SheRise | Contact Us</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">SheRise</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Businesses</a></li>
+            <li><a href="add-business.html">Add Business</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="about.html" >About Us</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+
+        <div class="contact-hero-content">
+
+            <p class="tagline">WE WOULD LOVE TO HEAR FROM YOU</p>
+
+            <h1>Let's Connect.<br>Let's Grow Together.</h1>
+
+            <p>
+                Have a question, suggestion or want to know more
+                about SheRise? We are always happy to connect
+                with you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Information Section -->
+    <section class="contact-section">
+
+        <div class="contact-heading">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                Feel free to reach out to us through any of
+                the following options.
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <!-- Email Card -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>Email Us</h3>
+
+                <p>
+                    Have questions or need assistance?
+                    Send us an email.
+                </p>
+
+                <a href="mailto:your-email@example.com">
+                    Send Email
+                </a>
+
+            </div>
+
+
+            <!-- Location Card -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Our Region</h3>
+
+                <p>
+                    Connecting and supporting women entrepreneurs
+                    across Punjab and Haryana.
+                </p>
+
+                <span>Punjab & Haryana, India</span>
+
+            </div>
+
+
+            <!-- Social Media Card -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <h3>Follow Us</h3>
+
+                <p>
+                    Stay connected with our community
+                    and support women-led businesses.
+                </p>
+
+                <a href="https://www.instagram.com/"
+                    target="_blank" rel="noopener noreferrer">
+                    Visit Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Message Form -->
+    <section class="contact-form-section">
+
+        <div class="contact-form-heading">
+
+            <h2>Send Us a Message</h2>
+
+            <p>
+                Write your message below and we will
+                be happy to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="contact-form-container">
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="name">Your Name *</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactEmail">Email Address *</label>
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">Subject *</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter message subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">Your Message *</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+
+                    Send Message
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+
+                <p id="contactSuccess"
+                    class="success-message"
+                    aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Call To Action -->
+    <section class="contact-preview">
+
+        <h2>Be Part of SheRise</h2>
+
+        <p>
+            Every woman entrepreneur has a story.
+            Help us share those stories with the world.
+        </p>
+
+        <a href="explore.html" class="contact-btn">
+            Explore Businesses
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>SheRise</h2>
+
+        <p>Empowering Women. Celebrating Entrepreneurship.</p>
+
+        <p>&copy; 2026 SheRise. All rights reserved.</p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // 1. Get HTML Elements
+
+        const contactForm = document.getElementById("contactForm");
+        const contactSuccess = document.getElementById("contactSuccess");
+
+
+        // 2. Form Submission
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            // 3. Get Form Values
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("contactEmail").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+
+            // 4. Check Empty Fields
+
+            if (name === "" || email === "" || subject === "" || message === "") {
+
+                contactSuccess.textContent = "Please fill in all the fields.";
+                return;
+
+            }
+
+
+            // 5. Display Success Message
+
+            contactSuccess.textContent =
+                "Thank you, " + name + "! Your message has been submitted successfully.";
+
+
+            // 6. Reset Form
+
+            contactForm.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

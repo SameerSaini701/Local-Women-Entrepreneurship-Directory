@@ -1,0 +1,298 @@
+
+/* Basic Page Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaff;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: white;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #8e44ad;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #a64ac9;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background: linear-gradient(120deg, #f5e6ff, #ffe6f0);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+.hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+.tagline {
+    color: #8e44ad;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #57236b;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: #8e44ad;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #6c3483;
+}
+
+/* Introduction Section */
+.intro {
+    text-align: center;
+    padding: 70px 15%;
+}
+
+.intro h2,
+.why-sherise h2 {
+    color: #57236b;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 auto;
+}
+/* Why SheRise Section */
+.why-sherise {
+    text-align: center;
+    padding: 60px 8%;
+    background-color: #faf2ff;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(142, 68, 173, 0.18);
+}
+
+.feature-card h3 {
+    color: #8e44ad;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #57236b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        padding: 50px 8%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 18px;
+    }
+
+    /* Feature Cards */
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+}
+
+/* Why SheRise Icons */
+.feature-card i {
+    font-size: 35px;
+    color: #8e44ad;
+    margin-bottom: 18px;
+    
+}
+
+/* About Page Improvements */
+
+.objectives {
+    padding: 70px 8%;
+    text-align: center;
+    background-color: #fffaff;
+}
+
+.objectives h2 {
+    font-size: 36px;
+    color: #51245f;
+    margin-bottom: 35px;
+}
+
+.objectives-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.objective-card {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.15);
+}
+
+.objective-card i {
+    font-size: 32px;
+    color: #8e44ad;
+    margin-bottom: 15px;
+}
+
+.objective-card h3 {
+    color: #8e44ad;
+    margin-bottom: 12px;
+}
+
+.objective-card p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Responsive Objectives */
+
+@media (max-width: 900px) {
+    .objectives-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .objectives-container {
+        grid-template-columns: 1fr;
+    }
+}

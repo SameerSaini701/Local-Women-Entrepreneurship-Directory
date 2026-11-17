@@ -1,0 +1,578 @@
+
+/* ==============================
+   FORM HERO SECTION
+================================ */
+
+.form-hero {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 8%;
+    background: linear-gradient(120deg, #f5e6ff, #ffe6f0);
+}
+
+.form-hero-content {
+    max-width: 750px;
+}
+
+.form-hero h1 {
+    font-size: 45px;
+    color: #57236b;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.form-hero p:not(.tagline) {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+}
+
+
+/* ==============================
+   ADD BUSINESS MAIN SECTION
+================================ */
+
+.add-business-section {
+    padding: 70px 8%;
+    background-color: #fffaff;
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-heading h2 {
+    font-size: 34px;
+    color: #57236b;
+    margin-bottom: 15px;
+}
+
+.form-heading p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   FORM CONTAINER
+================================ */
+
+.business-form-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Form Subheadings */
+
+.business-form-container h3 {
+    font-size: 21px;
+    color: #8e44ad;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0e0f5;
+}
+
+.business-form-container h3:first-child {
+    margin-top: 0;
+}
+
+.business-form-container h3 i {
+    margin-right: 10px;
+}
+
+
+/* ==============================
+   FORM GROUPS
+================================ */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 9px;
+}
+
+
+/* Input Fields */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fffaff;
+    border: 1px solid #e2cce9;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+
+/* Focus Effect */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 8px rgba(142, 68, 173, 0.15);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+
+/* State and City Row */
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    width: 50%;
+}
+
+
+/* ==============================
+   PERMISSION CHECKBOX
+================================ */
+
+.permission-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 25px 0;
+    padding: 18px;
+    background-color: #faf2ff;
+    border-radius: 8px;
+}
+
+.permission-box input {
+    width: 17px;
+    height: 17px;
+    margin-top: 4px;
+    accent-color: #8e44ad;
+    cursor: pointer;
+}
+
+.permission-box label {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   SUBMIT BUTTON
+================================ */
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8e44ad;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.submit-btn i {
+    margin-left: 8px;
+}
+
+.submit-btn:hover {
+    background-color: #6c3483;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   SUCCESS MESSAGE
+================================ */
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f8ee;
+    color: #267443;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.success-message:not(:empty) {
+    display: block;
+}
+
+
+/* ==============================
+   CONTACT PREVIEW SECTION
+================================ */
+
+.contact-preview {
+    text-align: center;
+    padding: 60px 8%;
+    background-color: #faf2ff;
+}
+
+.contact-preview h2 {
+    color: #57236b;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-preview p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+
+/* Contact Button */
+
+.contact-btn {
+    display: inline-block;
+    background-color: #8e44ad;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #6c3483;
+}
+
+
+/* Active Navigation Link */
+
+.nav-links a.active {
+    color: #8e44ad;
+}
+
+
+/* ==============================
+   CONTACT PAGE
+================================ */
+
+
+/* Contact Hero */
+
+.contact-hero {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 8%;
+    background: linear-gradient(120deg, #f5e6ff, #ffe6f0);
+}
+
+.contact-hero-content {
+    max-width: 750px;
+}
+
+.contact-hero h1 {
+    font-size: 45px;
+    color: #57236b;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.contact-hero p:not(.tagline) {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+}
+
+
+/* Contact Information Section */
+
+.contact-section {
+    padding: 70px 8%;
+    text-align: center;
+    background-color: #fffaff;
+}
+
+.contact-heading h2,
+.contact-form-heading h2 {
+    color: #57236b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-heading p,
+.contact-form-heading p {
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* Contact Cards Container */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+
+/* Individual Contact Card */
+
+.contact-card {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    padding: 30px 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 22px rgba(142, 68, 173, 0.15);
+}
+
+
+/* Contact Icons */
+
+.contact-icon {
+    font-size: 35px;
+    color: #8e44ad;
+    margin-bottom: 18px;
+}
+
+.contact-card h3 {
+    color: #8e44ad;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contact-card a,
+.contact-card span {
+    color: #8e44ad;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-card a:hover {
+    color: #57236b;
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   CONTACT FORM
+================================ */
+
+.contact-form-section {
+    padding: 70px 8%;
+    background-color: #faf2ff;
+}
+
+.contact-form-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.contact-form-container {
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   TABLET RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        gap: 15px;
+    }
+
+    .contact-card {
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 768px) {
+
+    .form-hero {
+        min-height: 280px;
+        padding: 45px 8%;
+    }
+
+    .form-hero h1 {
+        font-size: 34px;
+    }
+
+    .form-hero-content p:not(.tagline) {
+        font-size: 15px;
+    }
+
+    .add-business-section {
+        padding: 45px 5%;
+    }
+
+    .form-heading h2 {
+        font-size: 28px;
+    }
+
+    .business-form-container {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-row .form-group {
+        width: 100%;
+    }
+
+    .business-form-container h3 {
+        font-size: 19px;
+    }
+
+    .contact-preview {
+        padding: 45px 8%;
+    }
+
+    /* Contact Page */
+
+    .contact-hero {
+        min-height: 280px;
+        padding: 45px 8%;
+    }
+
+    .contact-hero h1 {
+        font-size: 34px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 500px;
+        flex: none;
+        box-sizing: border-box;
+    }
+
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+
+    .contact-section,
+    .contact-form-section {
+        padding: 45px 5%;
+    }
+
+}
+
+
+/* ==============================
+   SMALL MOBILE SCREENS
+================================ */
+
+@media (max-width: 480px) {
+
+    .form-hero h1,
+    .contact-hero h1 {
+        font-size: 29px;
+    }
+
+    .business-form-container {
+        padding: 22px 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 13px;
+    }
+
+    .contact-form-container {
+        padding: 20px 15px;
+    }
+
+    .contact-heading h2,
+    .contact-form-heading h2 {
+        font-size: 27px;
+    }
+
+}
