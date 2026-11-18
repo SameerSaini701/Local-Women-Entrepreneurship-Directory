@@ -4,34 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Explore Businesses | SheRise</title>
+    <title>Explore Businesses | Local Women Entrepreneurship Directory</title>
 
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/explore.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explore.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
-  
- <!-- Navigation Bar -->
-<header>
-    <nav class="navbar">
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
 
-        <a href="index.html" class="logo">SheRise</a>
+            <a href="index.html" class="logo">Local Women Entrepreneurship Directory</a>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="explore.html" class="active">Explore Businesses</a></li>
-            <li><a href="add-business.html">Add Business</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html" >About Us</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore Businesses</a></li>
+                <li><a href="add-business.html">Add Business</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
 
-    </nav>
-</header>
-   
+        </nav>
+    </header>
 
 
     <!-- Explore Hero Section -->
@@ -161,234 +159,232 @@
     <!-- Footer -->
     <footer>
 
-        <h2>SheRise</h2>
+        <h2>Local Women Entrepreneurship Directory</h2>
 
         <p>Empowering Women. Celebrating Entrepreneurship.</p>
 
-        <p>&copy; 2026 SheRise. All rights reserved.</p>
+        <p>&copy; 2026 Local Women Entrepreneurship Directory. All rights reserved.</p>
 
     </footer>
 
 
-    
+    <script>
 
-<script>
+    // 1. Get HTML Elements
 
-// 1. Get HTML Elements
-
-const businessGrid = document.getElementById("businessGrid");
-const searchInput = document.getElementById("searchInput");
-const stateFilter = document.getElementById("stateFilter");
-const cityFilter = document.getElementById("cityFilter");
-const categoryFilter = document.getElementById("categoryFilter");
-const resetBtn = document.getElementById("resetBtn");
-const resultCount = document.getElementById("resultCount");
-const emptyState = document.getElementById("emptyState");
+    const businessGrid = document.getElementById("businessGrid");
+    const searchInput = document.getElementById("searchInput");
+    const stateFilter = document.getElementById("stateFilter");
+    const cityFilter = document.getElementById("cityFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const resetBtn = document.getElementById("resetBtn");
+    const resultCount = document.getElementById("resultCount");
+    const emptyState = document.getElementById("emptyState");
 
 
-// 2. Business Data
+    // 2. Business Data
 
-const businesses = [
-    {
-        name: "Heritage Threads Studio",
-        owner: "Aanya Sharma",
-        category: "Fashion",
-        city: "Jalandhar",
-        state: "Punjab",
-        description: "A boutique showcasing traditional designs with a modern touch.",
-        icon: "fa-shirt"
-    },
-    {
-        name: "The Sweet Oven",
-        owner: "Mehak Verma",
-        category: "Food",
-        city: "Ludhiana",
-        state: "Punjab",
-        description: "A home bakery offering cakes and delicious treats.",
-        icon: "fa-cake-candles"
-    },
-    {
-        name: "Glow And Grace Studio",
-        owner: "Simran Kaur",
-        category: "Beauty",
-        city: "Ambala",
-        state: "Haryana",
-        description: "A beauty studio offering personal care services.",
-        icon: "fa-spa"
-    },
-    {
-        name: "Mitti Art House",
-        owner: "Ritu",
-        category: "Handicrafts",
-        city: "Kurukshetra",
-        state: "Haryana",
-        description: "A creative business featuring handmade crafts.",
-        icon: "fa-palette"
-    },
-    {
-        name: "BrightPath Learning",
-        owner: "Kavita",
-        category: "Education",
-        city: "Hisar",
-        state: "Haryana",
-        description: "An educational centre offering learning support.",
-        icon: "fa-book-open"
-    }
-];
-
-
-// 3. Display Business Cards
-
-function displayBusinesses(data) {
-
-    businessGrid.innerHTML = "";
-
-    data.forEach(function(business) {
-
-        businessGrid.innerHTML += `
-            <div class="business-card">
-
-                <div class="business-image">
-                    <i class="fa-solid ${business.icon}"></i>
-                </div>
-
-                <div class="business-info">
-
-                    <div class="card-topline">
-                        <span class="category-tag">
-                            ${business.category}
-                        </span>
-                        <span class="demo-tag">DEMO ENTRY</span>
-                    </div>
-
-                    <h3>${business.name}</h3>
-
-                    <p class="owner">
-                        Owner: ${business.owner}
-                    </p>
-
-                    <p class="description">
-                        ${business.description}
-                    </p>
-
-                    <div class="business-meta">
-                        <i class="fa-solid fa-location-dot"></i>
-                        ${business.city}, ${business.state}
-                    </div>
-
-                </div>
-
-            </div>
-        `;
-
-    });
-
-    resultCount.textContent = data.length + " businesses";
-
-    emptyState.hidden = data.length !== 0;
-
-}
-
-
-// 4. Search and Filter Function
-
-function searchBusinesses() {
-
-    let search = searchInput.value.toLowerCase();
-
-    let state = stateFilter.value;
-
-    let city = cityFilter.value;
-
-    let category = categoryFilter.value;
-
-    let filtered = businesses.filter(function(business) {
-
-        return (
-
-            (business.name.toLowerCase().includes(search) ||
-             business.owner.toLowerCase().includes(search)) &&
-
-            (state === "" || business.state === state) &&
-
-            (city === "" || business.city === city) &&
-
-            (category === "" || business.category === category)
-
-        );
-
-    });
-
-    displayBusinesses(filtered);
-
-}
-
-
-// 5. Search Event
-
-searchInput.addEventListener("input", searchBusinesses);
-
-
-// 6. Filter Events
-
-stateFilter.addEventListener("change", function() {
-
-    let state = stateFilter.value;
-
-    cityFilter.innerHTML = '<option value="">All Cities</option>';
-
-    let cities = [];
-
-    businesses.forEach(function(business) {
-
-        if ((state === "" || business.state === state) &&
-            !cities.includes(business.city)) {
-
-            cities.push(business.city);
-
+    const businesses = [
+        {
+            name: "Heritage Threads Studio",
+            owner: "Aanya Sharma",
+            category: "Fashion",
+            city: "Jalandhar",
+            state: "Punjab",
+            description: "A boutique showcasing traditional designs with a modern touch.",
+            icon: "fa-shirt"
+        },
+        {
+            name: "The Sweet Oven",
+            owner: "Mehak Verma",
+            category: "Food",
+            city: "Ludhiana",
+            state: "Punjab",
+            description: "A home bakery offering cakes and delicious treats.",
+            icon: "fa-cake-candles"
+        },
+        {
+            name: "Glow And Grace Studio",
+            owner: "Simran Kaur",
+            category: "Beauty",
+            city: "Ambala",
+            state: "Haryana",
+            description: "A beauty studio offering personal care services.",
+            icon: "fa-spa"
+        },
+        {
+            name: "Mitti Art House",
+            owner: "Ritu",
+            category: "Handicrafts",
+            city: "Kurukshetra",
+            state: "Haryana",
+            description: "A creative business featuring handmade crafts.",
+            icon: "fa-palette"
+        },
+        {
+            name: "BrightPath Learning",
+            owner: "Kavita",
+            category: "Education",
+            city: "Hisar",
+            state: "Haryana",
+            description: "An educational centre offering learning support.",
+            icon: "fa-book-open"
         }
+    ];
+
+
+    // 3. Display Business Cards
+
+    function displayBusinesses(data) {
+
+        businessGrid.innerHTML = "";
+
+        data.forEach(function(business) {
+
+            businessGrid.innerHTML += `
+                <div class="business-card">
+
+                    <div class="business-image">
+                        <i class="fa-solid ${business.icon}"></i>
+                    </div>
+
+                    <div class="business-info">
+
+                        <div class="card-topline">
+                            <span class="category-tag">
+                                ${business.category}
+                            </span>
+                            <span class="demo-tag">DEMO ENTRY</span>
+                        </div>
+
+                        <h3>${business.name}</h3>
+
+                        <p class="owner">
+                            Owner: ${business.owner}
+                        </p>
+
+                        <p class="description">
+                            ${business.description}
+                        </p>
+
+                        <div class="business-meta">
+                            <i class="fa-solid fa-location-dot"></i>
+                            ${business.city}, ${business.state}
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+        });
+
+        resultCount.textContent = data.length + " businesses";
+
+        emptyState.hidden = data.length !== 0;
+
+    }
+
+
+    // 4. Search and Filter Function
+
+    function searchBusinesses() {
+
+        let search = searchInput.value.toLowerCase();
+
+        let state = stateFilter.value;
+
+        let city = cityFilter.value;
+
+        let category = categoryFilter.value;
+
+        let filtered = businesses.filter(function(business) {
+
+            return (
+
+                (business.name.toLowerCase().includes(search) ||
+                 business.owner.toLowerCase().includes(search)) &&
+
+                (state === "" || business.state === state) &&
+
+                (city === "" || business.city === city) &&
+
+                (category === "" || business.category === category)
+
+            );
+
+        });
+
+        displayBusinesses(filtered);
+
+    }
+
+
+    // 5. Search Event
+
+    searchInput.addEventListener("input", searchBusinesses);
+
+
+    // 6. Filter Events
+
+    stateFilter.addEventListener("change", function() {
+
+        let state = stateFilter.value;
+
+        cityFilter.innerHTML = '<option value="">All Cities</option>';
+
+        let cities = [];
+
+        businesses.forEach(function(business) {
+
+            if ((state === "" || business.state === state) &&
+                !cities.includes(business.city)) {
+
+                cities.push(business.city);
+
+            }
+
+        });
+
+        cities.forEach(function(city) {
+
+            cityFilter.innerHTML += `
+                <option value="${city}">${city}</option>
+            `;
+
+        });
+
+        searchBusinesses();
 
     });
 
-    cities.forEach(function(city) {
+    cityFilter.addEventListener("change", searchBusinesses);
 
-        cityFilter.innerHTML += `
-            <option value="${city}">${city}</option>
-        `;
+    categoryFilter.addEventListener("change", searchBusinesses);
+
+
+    // 7. Reset Button
+
+    resetBtn.addEventListener("click", function() {
+
+        searchInput.value = "";
+
+        stateFilter.value = "";
+
+        cityFilter.innerHTML = '<option value="">All Cities</option>';
+
+        categoryFilter.value = "";
+
+        searchBusinesses();
 
     });
 
-    searchBusinesses();
 
-});
+    // 8. Initial Display
 
-cityFilter.addEventListener("change", searchBusinesses);
+    displayBusinesses(businesses);
 
-categoryFilter.addEventListener("change", searchBusinesses);
-
-
-// 7. Reset Button
-
-resetBtn.addEventListener("click", function() {
-
-    searchInput.value = "";
-
-    stateFilter.value = "";
-
-    cityFilter.innerHTML = '<option value="">All Cities</option>';
-
-    categoryFilter.value = "";
-
-    searchBusinesses();
-
-});
-
-
-// 8. Initial Display
-
-displayBusinesses(businesses);
-
-</script>
+    </script>
 
 
 </body>
